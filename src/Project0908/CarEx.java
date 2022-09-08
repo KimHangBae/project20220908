@@ -1,0 +1,90 @@
+package Project0908;
+
+class Car7{
+	String color;
+	int speed;
+	Car7(){
+		System.out.println("Car의 생성자");
+	}
+	Car7(String str){
+		System.out.println("매개변수가 있는 생성자"+str);
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public int getSpeed() {
+		return speed;
+	}
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+	void upspeed(int value) {
+		speed=speed+value;
+		if(speed>150) {
+			speed=150;
+		}
+	}
+		void downSpeed(int value) {
+		speed=speed-value;
+		}
+}
+
+class Sedan7 extends Car7{
+	int seatNum;
+	Sedan7(){
+		System.out.println("Sedan의 생성자");
+	}
+	Sedan7(String str){
+		System.out.println("Sedan의 매개변수 생성자"+str);
+	}
+
+	public int getSeatNum() {
+		return seatNum;
+	}
+
+	public void setSeatNum(int seatNum) {
+		this.seatNum = seatNum;
+	}
+	
+}
+class Truck7 extends Car7{
+	int capacity;
+	
+	Truck7(){
+		System.out.println("Truck의 생성자");
+	}
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+	
+}
+public class CarEx {
+
+	public static void main(String[] args) {
+		Sedan7 sedan1=new Sedan7();
+		//Car car1=new Car("여기는 부모클래스 생성자");//이 문장은 맨위에 str값으로 형성됐음
+		Sedan7 sedan2=new Sedan7("여기요");
+		sedan1.setColor("빨강");
+		sedan1.setSpeed(200);
+		sedan1.setSeatNum(5);
+		
+		System.out.printf("색상 %s,속도:%d,좌석수:%d\n",sedan1.getColor(),sedan1.getSpeed(),sedan1.getSeatNum());
+		
+//		Truck truck1=new Truck();
+//		truck1.setColor("파랑");
+//		truck1.setSpeed(60);
+//		truck1.setCapacity(6500);
+//		
+//		System.out.printf("색상:%s,속도:%d,적재량:%d\n",truck1.getColor(),truck1.getSpeed(),truck1.getCapacity());
+		
+	}
+
+}
